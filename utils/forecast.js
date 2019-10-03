@@ -2,7 +2,7 @@ const request = require('request')
 const private = require("./private")
 
 const forecast = (latitude, longitude, callback) => {
-    const url = private.url + latitude + ',' + longitude
+    const url = private.url + latitude + ',' + longitude+"?units=si"
 //the url is a link u get from the darksky.net api , make account they will give u yours
     request({ url, json: true }, (error, { body }) => {
         if (error) {
